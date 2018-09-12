@@ -14,8 +14,8 @@ const byId = (state = {}, action) => {
     }
 
     case types.UPVOTED: {
-      const {id} = action.payload;
-      const {post} = state[id];
+      const id = action.payload;
+      const post = state[id];
       const {karma} = post;
       return {
         ...state,
@@ -27,8 +27,8 @@ const byId = (state = {}, action) => {
     }
 
     case types.DOWNVOTED: {
-      const {id} = action.payload;
-      const {post} = state[id];
+      const id = action.payload;
+      const post = state[id];
       const {karma} = post;
       return {
         ...state,
@@ -40,12 +40,13 @@ const byId = (state = {}, action) => {
     }
 
     case types.COMMENT_ADDED: {
-      const {id} = action.payload;
-      const {post} = state[id]
+      const {idP} = action.payload;
+      const post = state[idP];
       const {comments} = post;
+      const {id} = action.payload;
       return {
         ...state,
-        [id]: {
+        [idP]: {
           ...post,
           comments : [
             ...comments,
@@ -80,9 +81,10 @@ const post = combineReducers({
 
 export const getPost = (state,id) => state.byId[id]; 
 
+
 export const getPosts = (state) => state.order.map(
   id => getPost(state, id),
-)
+);
 
 export default post;
 

@@ -11,9 +11,11 @@ const reducer = combineReducers({
 export default reducer;
 
 
-export const getPost = (state, id) => fromPosts.getPost(state, id);
+export const getPost = (state, id) => fromPosts.getPost(state.post, id);
 
-export const getPosts = (state) => fromPosts.getPosts(state);
+export const getPosts = (state) => fromPosts.getPosts(state.post);
 
-export const getComment = (state, id) => fromComments.getComment(state, id);
+
+export const getComment = (state, id) => fromComments.getComment(state.comments, id);
+
 

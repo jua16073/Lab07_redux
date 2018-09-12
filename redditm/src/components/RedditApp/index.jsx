@@ -1,12 +1,15 @@
 import React, { Fragment } from 'react';
 
 import './App.css';
+import PostForm from '../PostForm';
+import Posts from '../Posts';
 
 
 const RedditApp = () => (
   <Fragment>
     <div className= "App">
-      hola
+      <PostForm/>
+      <Posts/>
     </div>
   </Fragment>
 );

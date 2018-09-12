@@ -19,11 +19,13 @@ comments,
 
 export const addComment = (
   id,
+  idP,
   body
 ) => ({
   type: types.COMMENT_ADDED,
   payload:{
     id,
+    idP,
     body,
   }
 });
