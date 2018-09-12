@@ -1,9 +1,33 @@
 .post{
-  background: lightskyblue;
+  background: #79c99e;
   margin: 5px;
+  text-align: left;
+  border-radius: 0.5rem;
 }
 
 .karma{
   width: 5rem;
-  margin: 5px;
+  margin-left: 1px;
+  margin-right: 1px;
+  text-align: center;
+}
+
+.titulo{
+  margin: 1.3rem;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+}
+
+.body{
+  margin: 2rem;
+}
+
+.karmaPart{
+  display: flex;
+  margin-left: 1.3rem;
+}
+
+.ingresoComs{
+  margin-left: 1.3rem;
+  margin-top: 1rem;
 }

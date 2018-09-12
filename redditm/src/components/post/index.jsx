@@ -17,31 +17,33 @@ const post = ({
   onDownvote
 }) => (
   <div className="post">
-    <h1>{title}</h1>
-    <p>{body}</p>
-    <input type="text" ref= {node => {this.comentario = node;}} />
-    <button onClick =  {
-      () => {
-        onSubmit(
-          this.comentario.value,
-        );
-        this.comentario.value = "";
-      }
-    } >New Comment</button>
-
-    <button onClick = {
-      () => {
-        onUpvote();
-      }
-      } >up</button>
-
+    <h1 className="titulo">{title}</h1>
+    <p className= "body">{body}</p>
+    <div className="karmaPart">
       <button onClick = {
-      () => {
-        onDownvote();
-      }
-      } >down</button>
-    <div className= "karma">
-      {karma}
+        () => {
+          onUpvote();
+        }
+        } >up</button>
+      <div className= "karma">
+        {karma}
+      </div>
+      <button onClick = {
+        () => {
+          onDownvote();
+        }
+        } >down</button>
+    </div>
+    <div className="ingresoComs">
+      <input type="text" ref= {node => {this.comentario = node;}} />
+      <button onClick =  {
+        () => {
+          onSubmit(
+            this.comentario.value,
+          );
+          this.comentario.value = "";
+        }
+      } >New Comment</button>
     </div>
     <Comments id = {id}/>
   </div>

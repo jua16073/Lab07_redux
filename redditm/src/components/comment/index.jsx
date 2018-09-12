@@ -2,12 +2,12 @@ import React, {Fragment} from 'react';
 import {connect} from 'react-redux';
 
 import * as selectors from '../../reducers';
-
+import './comment.css';
 const sComment = ({
   id,
   body
 }) => (
-  <div>
+  <div className="comment">
     <p>{body}</p>
   </div>
 )
